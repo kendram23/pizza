@@ -4,7 +4,7 @@ module Pizza
   end
 
   class Topping
-  	attr_accessor :name
+  	attr_accessor :name, :vegetarian
 
   	# Instantiate a new topping
   	#
