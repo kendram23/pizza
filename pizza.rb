@@ -6,6 +6,10 @@ module Pizza
   		@toppings = toppings
   	end
 
+  	def vegetarian?
+
+  	end
+
   end
 
   class Topping
