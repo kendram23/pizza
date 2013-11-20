@@ -2,12 +2,16 @@ module Pizza
   class Pie
   	attr_accessor :toppings
 
-  	def initialize(toppings=[Pizza::Topping.new('cheese')])
+  	def initialize(toppings=[Pizza::Topping.new('cheese', vegetarian: true)])
   		@toppings = toppings
   	end
 
   	def vegetarian?
-
+  		if @toppings.any? {|topping| topping.vegetarian != false }
+  			return true
+  		else
+  			return false
+  		end
   	end
 
   end

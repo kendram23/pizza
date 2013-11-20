@@ -18,7 +18,9 @@ describe Pizza::Pie do
 		it 'defaults the toppings to cheese only, if the pizza has no toppings' do
 		pizza = Pizza::Pie.new
 
+			# Size is an internal method that is available for the toppings array
 		expect(pizza.toppings.size).to eq(1)
+			# First is used to call on the first object in the array
 		expect(pizza.toppings.first.name).to eq('cheese')
 		end
 	end
@@ -26,9 +28,9 @@ describe Pizza::Pie do
 	describe '#vegetarian?' do
 
 		it "checks to see if all of the toppings are vegetarian and returns true if the pizza is vegetarian" do
-		pizza = Pizza::Pie.new
+		veg = Pizza::Pie.new()
 
-		expect(pizza.vegetarian?).to eq(true)
+		expect(veg.vegetarian?).to eq(true)
 		end
 	end
 end 
