@@ -26,11 +26,21 @@ describe Pizza::Pie do
 	end
 
 	describe '#vegetarian?' do
-
-		it "checks to see if all of the toppings are vegetarian and returns true if the pizza is vegetarian" do
+		it "checks to see if all of the toppings are vegetarian and 	returns true if the pizza is vegetarian" do
+			# Cheese is automatically pushed into this array
 		veg = Pizza::Pie.new()
 
 		expect(veg.vegetarian?).to eq(true)
+		end
+	end
+
+	describe '#add_topping' do
+		it "Checks to see if a new topping is added to the array" do
+		onion = Pizza::Topping.new('onion', vegetarian: true)
+		pizza = Pizza::Pie.new()
+		pizza.add_topping(onion)
+
+		expect(pizza.toppings.size).to eq(2)
 		end
 	end
 end 
