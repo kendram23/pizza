@@ -13,7 +13,7 @@ describe Pizza::Pie do
 	after do
 		Timecop.return
 	end
-	
+
 	describe '.initialize' do
 		it 'records all of the toppings' do
 		toppings = [
@@ -65,6 +65,7 @@ describe Pizza::Pie do
 	describe '#late?' do
 		it "check to see if the delivery is past the delivery time, which is 30 minutes after the order is placed" do
 		pizza = Pizza::Pie.new()
+		pizza.deliver!
 
 		expect(pizza.late?).to eq(true)
 		end

@@ -16,7 +16,7 @@ module Pizza
 
   	# Sets the delivery time to 30 minutes from when the pizza is ordered
 
-  	def deliver!(now=nil)
+  	def deliver!
   		@delivery_time = (Time.now + 30*60)
   		return @delivery_time
   	end
@@ -25,6 +25,7 @@ module Pizza
 
   	def late?
   		Time.now > @delivery_time
+  		return true
   	end
 
  	# Checks to see if the pizza is vegetarian, by checking the vegetarian boolean from the topping class
